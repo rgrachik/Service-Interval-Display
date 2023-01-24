@@ -101,6 +101,9 @@
                                 <rect key="frame" x="134" y="683.33333333333337" width="162.33333333333337" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Обновить пробег"/>
+                                <connections>
+                                    <action selector="renewMileageButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="ydL-lr-9tN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pPl-ve-XVQ">
                                 <rect key="frame" x="146.33333333333337" y="752.66666666666663" width="137.66666666666663" height="34.333333333333371"/>
@@ -112,6 +115,7 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="changeOilButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="YWn-3x-nzv"/>
                                     <segue destination="sau-X3-Atc" kind="show" id="T8O-T6-AX1"/>
                                 </connections>
                             </button>
@@ -131,9 +135,16 @@
                             <constraint firstItem="x6D-ks-0Kz" firstAttribute="top" secondItem="xer-pO-eME" secondAttribute="bottom" constant="72.329999999999998" id="lA4-uO-Wkf"/>
                             <constraint firstItem="x6D-ks-0Kz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="vWj-co-HOZ"/>
                             <constraint firstItem="xer-pO-eME" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vc8-8b-bZg"/>
-                            <constraint firstItem="FEq-Y1-lLN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="x6D-ks-0Kz" secondAttribute="trailing" symbolic="YES" id="zxM-F4-2dS"/>
+                            <constraint firstItem="FEq-Y1-lLN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="x6D-ks-0Kz" secondAttribute="trailing" constant="8" symbolic="YES" id="zxM-F4-2dS"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="currentMileageLabel" destination="whz-PO-60Y" id="i4p-xq-gJa"/>
+                        <outlet property="daeOfChangeLabel" destination="P7p-7B-4XF" id="RtW-uJ-HT7"/>
+                        <outlet property="nextMileageLabel" destination="FEq-Y1-lLN" id="sU7-UZ-YWh"/>
+                        <outlet property="oilNameLabel" destination="pzg-Uv-CbQ" id="v2a-BG-8EN"/>
+                        <outlet property="oilVolumeLabel" destination="wAC-Br-F5a" id="bZC-K2-mg7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -218,6 +229,9 @@
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveButtonPressed" destination="sau-X3-Atc" eventType="touchUpInside" id="MTv-ly-zJk"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Замена масла" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="el1-QW-vU8">
                                 <rect key="frame" x="146.33333333333331" y="235" width="137.33333333333331" height="20.666666666666657"/>
@@ -238,6 +252,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6NA-gQ-YAR"/>
+                    <connections>
+                        <outlet property="dateOfChangeTextField" destination="zxm-56-rye" id="iZP-Wt-4Hr"/>
+                        <outlet property="mileageTextField" destination="GuU-ZA-I60" id="GRS-dK-cln"/>
+                        <outlet property="oilNameTextField" destination="Fkj-nK-wfN" id="fWe-7J-FXw"/>
+                        <outlet property="oilVolumeTextField" destination="Blr-hF-Ujt" id="Ovh-7r-tu7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EVA-AN-0uT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
