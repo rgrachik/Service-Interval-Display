@@ -8,6 +8,11 @@
 import UIKit
 
 class SecondViewController: UIViewController {
+    
+    var oilName = ""
+    var oilVolume = ""
+    var dateOfChange = ""
+    var mileage = ""
 
     @IBOutlet weak var oilNameTextField: UITextField!
     
@@ -25,5 +30,22 @@ class SecondViewController: UIViewController {
     
     @IBAction func saveButtonPressed() {
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let safeOilName = oilNameTextField.text {
+            oilName = safeOilName
+        }
+        if let safeOilVolume = oilVolumeTextField.text {
+            oilVolume = safeOilVolume
+        }
+        if let safeDateOfChange = dateOfChangeTextField.text {
+            dateOfChange = safeDateOfChange
+        }
+        if let safeMileage = mileageTextField.text {
+            mileage = safeMileage
+        }
+    }
+   
     
 }
