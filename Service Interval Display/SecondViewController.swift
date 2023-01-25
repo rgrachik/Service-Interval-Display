@@ -29,6 +29,7 @@ class SecondViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed() {
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -46,6 +47,27 @@ class SecondViewController: UIViewController {
             mileage = safeMileage
         }
     }
-   
+}
+
+extension SecondViewController: UITextFieldDelegate {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == oilNameTextField {
+            oilVolumeTextField.becomeFirstResponder()
+        }
+        else if textField == oilVolumeTextField {
+            dateOfChangeTextField.becomeFirstResponder()
+        }
+        else if textField == dateOfChangeTextField {
+            mileageTextField.becomeFirstResponder()
+        }
+        else {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
     
 }
