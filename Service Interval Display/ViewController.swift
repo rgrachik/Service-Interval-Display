@@ -22,8 +22,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        oilNameLabel.text = "fff"
-        oilVolumeLabel.text = "---"
+       
     }
     @IBAction func renewMileageButton() {
     }
