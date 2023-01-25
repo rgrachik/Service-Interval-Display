@@ -140,7 +140,7 @@
                     </view>
                     <connections>
                         <outlet property="currentMileageLabel" destination="whz-PO-60Y" id="i4p-xq-gJa"/>
-                        <outlet property="daeOfChangeLabel" destination="P7p-7B-4XF" id="RtW-uJ-HT7"/>
+                        <outlet property="dateOfChangeLabel" destination="P7p-7B-4XF" id="xOI-sn-3rU"/>
                         <outlet property="nextMileageLabel" destination="FEq-Y1-lLN" id="sU7-UZ-YWh"/>
                         <outlet property="oilNameLabel" destination="pzg-Uv-CbQ" id="v2a-BG-8EN"/>
                         <outlet property="oilVolumeLabel" destination="wAC-Br-F5a" id="bZC-K2-mg7"/>
@@ -231,6 +231,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="saveButtonPressed" destination="sau-X3-Atc" eventType="touchUpInside" id="MTv-ly-zJk"/>
+                                    <segue destination="eLK-FU-yur" kind="unwind" identifier="backToFirst" unwindAction="UnwindActionWithUnwindSegue:" id="uhM-3z-L2A"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Замена масла" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="el1-QW-vU8">
@@ -260,6 +261,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EVA-AN-0uT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="eLK-FU-yur" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1287.9069767441861" y="0.0"/>
         </scene>
