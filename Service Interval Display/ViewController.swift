@@ -22,8 +22,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        oilNameLabel.text = "fff"
-        oilVolumeLabel.text = "---"
+        oilNameLabel.text = UserDefaults.standard.string(forKey: "oilName")
+        oilVolumeLabel.text = UserDefaults.standard.string(forKey: "oilVolume")
+        dateOfChangeLabel.text = UserDefaults.standard.string(forKey: "dateOfChange")
+        currentMileageLabel.text = UserDefaults.standard.string(forKey: "mileage")
+        nextMileageLabel.text = UserDefaults.standard.string(forKey: "nextMileageLabel")
     }
     @IBAction func renewMileageButton() {
     }
@@ -39,6 +42,7 @@ class ViewController: UIViewController {
         dateOfChangeLabel.text = source.dateOfChange
         currentMileageLabel.text = source.mileage
         nextMileageLabel.text = String((Int(source.mileage) ?? 0) + 10000)
+        UserDefaults.standard.set(nextMileageLabel.text, forKey: "nextMileageLabel")
         
         }
     }
