@@ -29,6 +29,10 @@ class SecondViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed() {
+        UserDefaults.standard.set(oilName, forKey: "oilName")
+        UserDefaults.standard.set(oilVolume, forKey: "oilVolume")
+        UserDefaults.standard.set(dateOfChange, forKey: "dateOfChange")
+        UserDefaults.standard.set(mileage, forKey: "mileage")
 
     }
     
