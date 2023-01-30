@@ -28,8 +28,7 @@ class ViewController: UIViewController {
         currentMileageLabel.text = UserDefaults.standard.string(forKey: "mileage")
         nextMileageLabel.text = UserDefaults.standard.string(forKey: "nextMileageLabel")
     }
-    @IBAction func renewMileageButton() {
-    }
+   
     
     @IBAction func changeOilButton() {
     }

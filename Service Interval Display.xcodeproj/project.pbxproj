@@ -294,6 +294,8 @@
 				DEVELOPMENT_TEAM = 27FU6W5HPT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Service Interval Display/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Service Interval Display";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -326,6 +328,8 @@
 				DEVELOPMENT_TEAM = 27FU6W5HPT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Service Interval Display/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Service Interval Display";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
