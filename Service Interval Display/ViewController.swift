@@ -21,7 +21,11 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var progressView: UIProgressView!
     
-    var updatedMileage = 0
+    
+    
+    var updatedMileage: Float = 0
+    var startMileage: Float = 0
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +34,8 @@ class ViewController: UIViewController {
         dateOfChangeLabel.text = UserDefaults.standard.string(forKey: "dateOfChange")
         currentMileageLabel.text = UserDefaults.standard.string(forKey: "mileage")
         nextMileageLabel.text = UserDefaults.standard.string(forKey: "nextMileageLabel")
-        
+        let dif = UserDefaults.standard.float(forKey: "difference")
+        progressView.setProgress(dif, animated: true)
         
     }
    
@@ -46,11 +51,18 @@ class ViewController: UIViewController {
         let saveAction = UIAlertAction(title: "Сохранить", style: .default) { action in
             let textField = alertController.textFields?.first
             if let upd = textField?.text {
-                if let intUpd = Int(upd) {
+                if let intUpd = Float(upd) {
                     self.updatedMileage = intUpd
                 }
-                
             }
+            let difference = self.updatedMileage - self.startMileage
+            let factor: Float = difference/10000
+            UserDefaults.standard.set(factor, forKey: "difference")
+            self.progressView.setProgress(factor, animated: true)
+            print(self.updatedMileage)
+            print(self.startMileage)
+            print(difference)
+            print(factor)
         }
         
         alertController.addTextField()
@@ -74,7 +86,9 @@ class ViewController: UIViewController {
         currentMileageLabel.text = source.mileage
         nextMileageLabel.text = String((Int(source.mileage) ?? 0) + 10000)
         UserDefaults.standard.set(nextMileageLabel.text, forKey: "nextMileageLabel")
+        startMileage = Float(source.mileage) ?? 0
         
+        self.progressView.setProgress(0, animated: true)
         }
     }
     
